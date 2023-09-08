@@ -10,12 +10,12 @@ assignments, projects, and my voyage into the world of IT and web
 development.
 
 ## Table of Contents
-- [The Journey Begins](#introduction)
-- [Semester & Classes](#SemesterAndClasses)
-- [Missions (Assignments)](#assignments)
-- [Exploring New Frontiers (Projects)](#projects)
-- [Fellow Explorers](#contributors)
-- [Open Source Universe (License)](#license)
+- [The Journey Begins](#the-journey-begins)
+- [Semester & Classes](#semester--classes)
+- [Missions (Assignments)](#missions-assignments)
+- [Exploring New Frontiers (Projects)](#exploring-new-frontiers-projects)
+- [Fellow Explorers](#fellow-explorers)
+- [Open Source Universe (License)](#open-source-universe-license)
 
 ## The Journey Begins
 
