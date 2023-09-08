@@ -59,7 +59,7 @@ voyage.
 
 ## Fellow Explorers
 
-- **[Raj Singh](https://github.com/zorkzap)** - A space pirate of VIU ITAS 
+- **[Raj Singh](https://github.com/yorkzap)** - A space pirate of VIU ITAS 
 Program
 
 Feel free to connect with me in this cosmic GitHub space, where we can 
