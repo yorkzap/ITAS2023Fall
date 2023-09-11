@@ -23,6 +23,10 @@ This repository contains a production plan for running web apps in the ITAS 181 
   3. Create, edit, and assign partitions.
   4. Review settings and confirm.
   5. Complete installation and configure post-installation.
+  
+- Two partitions get created when installing Linux. This is for security purposes.
+  1. root (All OS files)
+  2. boot (Needed for boot files)
 
 #### Note:
 
