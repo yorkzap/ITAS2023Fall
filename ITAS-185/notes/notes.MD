@@ -10,4 +10,8 @@
 
 ## What is Pythoin?
 
-- **Definition:** High level, general-purpose programming language. Easy to read, dynamically typed, garbage-collected, supports multiple paradigms, comprehensive strandard library. ("batteries included").
+- **Definition:**
+    - High level, general-purpose programming language.
+    - Easy to read, dynamically typed and garbage-collected
+    - Supports multiple paradigms
+    - Comprehensive strandard library. ("batteries included").
