@@ -8,3 +8,6 @@
 
 - **Definition:** A program is a set of instructions that directs the computer's behavior.
 
+## What is Pythoin?
+
+- **Definition:** High level, general-purpose programming language. Easy to read, dynamically typed, garbage-collected, supports multiple paradigms, comprehensive strandard library. ("batteries included").
