@@ -46,14 +46,21 @@
   - **Execute:** Perform the operation specified by the instruction.
 
 ## Main memory (RAM)
+
 - A byte consists of eight bits that may be either on or off.
- - 1 = on
- - 0 = off
+  - 1 = on
+  - 0 = off
 - The bits form a pattern that represents a character or a number.
-- Each byte in memory is assigned a unique number known as an address
+- Each byte in memory is assigned a unique number known as an address.
 
 - For example, a series of bytes with their addresses:
-  - The number 149 is stored in the byte at address 16
-  - The number 72 is stored in the byte at address 23
+  - The number 149 is stored in the byte at address 16.
+  - The number 72 is stored in the byte at address 23.
 
 [Diagram Link](https://prnt.sc/bWuIHPqR1NfY)
+
+## Operating Systems
+
+- An operating system is a set of programs that manages the computer’s hardware devices and controls their processes.
+- Most modern operating systems are multitasking and capable of running multiple programs at once.
+- Through *scheduling*, an operating system divides the allocation of hardware resources and the attention of the CPU among all the executing programs.
