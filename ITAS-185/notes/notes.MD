@@ -176,3 +176,8 @@ Games
   - Top level functions and classes two blank lines
   - Methods inside a class surround with one blank line
   - Many, many more
+
+  ## Errors
+  - Syntax
+  - Runtime
+  - Logical
