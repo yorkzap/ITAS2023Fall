@@ -167,3 +167,12 @@ Games
  - A Foolish Consistency is the Hobgoblin of Little Minds
     - “Code is read much more often than it is written” – BDFL 
     - Readability counts (PEP 20)
+
+## PEP 8 Highlights
+  - Indentation – 4 spaces (not tabs)
+  - Maximum line length of 79 characters
+  - Blank lines
+  - One at end
+  - Top level functions and classes two blank lines
+  - Methods inside a class surround with one blank line
+  - Many, many more
