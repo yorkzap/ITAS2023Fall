@@ -17,3 +17,10 @@
  - Provincial Gov
  - Remote
 
+ ## How to participate?
+ - Pass 118
+ - "B" grade average in all ITAS courses
+ - Conduct active job search in the spring
+ - Once secured a position, create your work term on the Experience Hub for final approval
+ - Once position is approved, register in ITAS 196
+
