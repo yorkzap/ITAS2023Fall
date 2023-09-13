@@ -2,7 +2,7 @@
     Course: ITAS 185 - Introduction to Programming
     Lab 1: Introduction to Python
     Name: Raj Singh
-    Description: This program **will edit later**
+    Description: This program calculates the amount to be paid
 """
 
 wage = input("Enter the wages per hour ")
