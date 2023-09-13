@@ -5,8 +5,8 @@
     Description: This program contains different Math calculations.
 """
 #Input in float datatype in order to take in decimals
-num1 = float(input("Enter number 1"))
-num2 = float(input("Enter number 2"))
+num1 = float(input("Enter number 1 "))
+num2 = float(input("Enter number 2 "))
 
 #Do calculations
 diff = num1 - num2
