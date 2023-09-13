@@ -6,3 +6,14 @@
  - More recognized
  - Each four month Co-op term is 9 credits
 
+## Past co-op employers
+ - Amazon
+ - CSIS
+ - Spare Labs
+ - BCI
+ - VIU itself
+ - Nanaimo Association for Community Living
+ - Coast Building Systems Inc.
+ - Provincial Gov
+ - Remote
+
