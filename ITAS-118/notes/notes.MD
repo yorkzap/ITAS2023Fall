@@ -23,4 +23,3 @@
  - Conduct active job search in the spring
  - Once secured a position, create your work term on the Experience Hub for final approval <!--More on this later during spring-->
  - Once position is approved, register in ITAS 196 <!--More on this later during spring-->
-
