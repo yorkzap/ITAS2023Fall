@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-
 body {
-    font-family: 'Patrick Hand', cursive, 'Helvetica', sans-serif;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(30,232,182,1) 35%, rgba(0,212,255,1) 100%);
+    font-family: 'Patrick Hand', cursive, 'Helvetica', sans-serif;
+    font-size: 2rem;
+}
+
+h1, h2, p {
     margin-left: 35%;
 }
+
