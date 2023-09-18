@@ -23,4 +23,9 @@
 
 - `cd ~raj`: Changes the current directory to Raj's home directory.
 
+- `grep -i "pattern" filename`: Searches for the specified pattern in the given file while ignoring case sensitivity.
+
+- `grep "[0-9]" filename`: Searches for lines containing any digit (0-9) in the given file.
+
+
 
