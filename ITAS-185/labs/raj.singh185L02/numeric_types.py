@@ -5,16 +5,19 @@ This program demonstrates how numeric types and operators behave in Python
 """
 # Add the import statements you need here
 
+
 # TASK A- Correct these forumulae
 # Find an arithmetic average
 # identifier declarations
 NUMBER = 3		# number of scores
 SCORE1 = 100	# first test score
 SCORE2 = 97 	# second test score
-SCORE3 = 90     # third test score
+SCORE3 = 90   # third test score
 
-average = SCORE1 + SCORE2 + SCORE3 / NUMBER
-output = SCORE1 + " and " + SCORE2 + " and " + SCORE3 + " have an average of " + average
+
+average = (SCORE1 + SCORE2 + SCORE3) / NUMBER
+
+output = str(SCORE1) + " and " + str(SCORE2) + " and " + str(SCORE3) + " have an average of " + str(average)
 print(output)
 
 # Convert Fahrenheit temperatures to Celsius
@@ -22,7 +25,8 @@ BOILING_IN_F = 212      # boiling temperature
 
 f_to_c = 5/9 * BOILING_IN_F - 32
 
-print(f"BOILING_IN_F in Fahrenheit is {f_to_c} in Celsius.", end="\n\n")
+print(f"{BOILING_IN_F} in Fahrenheit is {f_to_c} in Celsius.", end="\n\n")
+
 
 # ADD LINES FOR TASK B HERE
 # Note you also need to import the random module where indicated above
