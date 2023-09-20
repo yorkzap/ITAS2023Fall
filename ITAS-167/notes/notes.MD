@@ -14,3 +14,5 @@
 - Have a plastic bag or cup handy to hold screws
 - Open the case cover
 - Clip your ESD strap to the side of the computer case
+
+### 
