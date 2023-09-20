@@ -23,3 +23,12 @@
  - Conduct active job search in the spring
  - Once secured a position, create your work term on the Experience Hub for final approval <!--More on this later during spring-->
  - Once position is approved, register in ITAS 196 <!--More on this later during spring-->
+
+ ## What is Networking?
+ - Process of interacting with others to exchange information and develop professional or social contacts.
+
+ ## Elevator Pitch
+ - Introduction
+ - Objective (Why you're here)
+ - Summarize how your education, experience, strengths etc
+ - Keep the conversation alive!
