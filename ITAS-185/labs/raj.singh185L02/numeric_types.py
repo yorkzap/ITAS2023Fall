@@ -22,7 +22,7 @@ print(output)
 BOILING_IN_F = 212      # boiling temperature
 
 # Convert Fahrenheit temperatures to Celsius
-f_to_c = 5/9 * BOILING_IN_F - 32
+f_to_c = 5/9 * (BOILING_IN_F - 32)
 print(f"{BOILING_IN_F} in Fahrenheit is {f_to_c} in Celsius.", end="\n\n")
 
 # TASK B
@@ -45,4 +45,4 @@ radius = diameter / 2
 # Calculate the volume 
 approximate_volume = (4/3) * math.pi * radius ** 3
 # Print out the volume
-print(approximate_volume)
+print(f"The approximate volume of the sphere with diameter {diameter} units is {approximate_volume:.2f} cubic units")
