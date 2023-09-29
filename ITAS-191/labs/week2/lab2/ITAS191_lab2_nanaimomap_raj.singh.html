@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Favourite places in Nanaimo</title>
+    <link rel="icon" type="image/png" href="favicon.png"> 
+    <link rel="stylesheet" type="text/css" href="style.css"> <!--External stylsheet attached-->
+    <style>
+
+      .letterA, .letterB, .letterC, .letterD, .letterE {
+        display: flex;
+        border-radius: 16px;
+        transition: transform 0.3s ease-in-out; /* Add transition from previous example */
+    }
+    
+    .letterA {
+        padding: 5px;
+        margin-top: 490px;
+        margin-left: 530px;
+    }
+    
+    .letterB {
+        padding: 15px;
+        margin-top: 450px;
+        margin-left: 70px;
+    }
+    
+    .letterC {
+        padding: 10px;
+        margin-top: 350px;
+        margin-left: -15px;
+    }
+    
+    .letterD {
+        padding: 10px;
+        margin-top: 580px;
+        margin-right: 310px;
+        margin-left: -140px;
+    }
+
+    .letterF {
+        padding: 10px;
+        margin-top: 480px;
+        margin-right: 510px;
+        margin-left: -450px;
+    }
+    
+    .letterE {
+        padding: 10px;
+        margin-top: 480px;
+        margin-right: 510px;
+        margin-left: -450px;
+    }
+    </style> <!--Two embedded CSS finished-->
+</head>
+
+<body>
+    <header>
+        <h1>My favourite places in Nanaimo</h1>
+    </header>
+
+    <main>
+        <div id="map">
+          <a href="#viu"><div class="letterA"></div></a>
+          <a href="#rbc"><div class="letterB"></div></a>
+          <a href="#newcastle_island"><div class="letterC"></div></a>
+          <a href="#colliery_dam_park"><div class="letterD"></div></a>
+          <a href="#westwood_lake_park"><div class="letterF"></div></a>
+        </div>
+
+        <div id="legend" style="padding: 10px 15px; float: left;"> <!--Inline CSS 1-->
+            <h2>Legend</h2>
+            <ol type="A">
+                <li><a href="#viu">Vancouver Island University</a></li>
+                <li><a href="#rbc">Royal Bank of Canada</a></li>
+                <li><a href="#newcastle_island">Newcastle Island</a></li>
+                <li><a href="#colliery_dam_park">Colliery Dam Park</a></li>
+                <li><a href="#westwood_lake_park">Westwood Lake Park</a></li>
+            </ol>
+        </div>
+    </main>
+    <footer style="clear: both;"> <!--Inline CSS 2-->
+        <div id="details">
+            <h2>Details about Places</h2>
+            <section>
+                <h3 id="viu">Vancouver Island University</h3>
+                <a href="./images/viu.jpg">
+                  <img src="./images/viu.jpg" alt="Vancouver Island University" 
+                width="200" height="100">
+                </a>    
+                <p>Vancouver Island University, often referred to as VIU, is a place close to my heart. The serene
+                    campus nestled amidst nature's beauty is not just an educational institution but a hub of learning
+                    and cultural diversity. Whether it's the welcoming atmosphere, the friendly faces, or the wide
+                    range of academic opportunities, VIU is a place where growth and discovery thrive.</p>
+            </section>
+            <section>
+                <h3 id="rbc">Royal Bank of Canada</h3>
+                <a href="./images/rbc.jpeg">
+                  <img src="./images/rbc.jpeg" alt="Royal Bank of Canada" 
+                width="200" height="100">
+                </a>            
+                <p>The Royal Bank of Canada, or RBC, represents more than just a financial institution to me. It stands
+                    as a symbol of trust and reliability. The bank's presence in Nanaimo offers convenient access to
+                    banking services and financial guidance. It's a place where financial aspirations find support and
+                    a community where your financial well-being is a priority.</p>
+            </section>
+            <section>
+                <h3 id="newcastle_island">Newcastle Island</h3>
+                <a href="./images/newcastle_island.jpg">
+                  <img src="./images/newcastle_island.jpg" alt="Newcastle Island" 
+                width="200" height="100">
+                </a>    
+                <p>Newcastle Island holds a special place in my heart as it's a natural oasis in the midst of urban
+                    life. The island's trails, forests, and waterfront views provide a serene escape from the hustle and
+                    bustle of the city. Whether you're hiking, picnicking, or simply enjoying the beauty of nature,
+                    Newcastle Island offers a tranquil retreat.</p>
+            </section>
+            <section>
+                <h3 id="colliery_dam_park">Colliery Dam Park</h3>
+                <a href="./images/colliery_dam_park.jpeg">
+                  <img src="./images/colliery_dam_park.jpeg" alt="Colliery Dam Park" 
+                width="200" height="100">
+                </a>    
+                <p>Colliery Dam Park is a hidden gem in Nanaimo, where the tranquil waters of the Colliery Dams meet
+                    lush greenery. It's a place to connect with nature, go for a peaceful walk, or even enjoy a
+                    leisurely paddle. This park offers a slice of wilderness within the city, making it a favorite spot
+                    for relaxation and outdoor enthusiasts.</p>
+            </section>
+            <section>
+                <h3 id="westwood_lake_park">Westwood Lake Park</h3>
+                <a href="./images/westwood_lake_park.jpeg">
+                  <img src="./images/westwood_lake_park.jpeg" alt="Westwood Lake Park" 
+                width="200" height="100">
+                </a>    
+                <p>Westwood Lake Park is a haven for outdoor enthusiasts and adventure seekers. With its clear waters,
+                    sandy beach, and picturesque hiking trails, it's an ideal destination for swimming, kayaking, and
+                    hiking. The park's scenic beauty and recreational opportunities make it a beloved spot for both
+                    locals and visitors alike.</p>
+            </section>
+        </div>
+    </footer>
+</body>
+
+</html>

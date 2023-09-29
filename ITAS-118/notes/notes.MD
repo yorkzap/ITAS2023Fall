@@ -28,7 +28,14 @@
  - Process of interacting with others to exchange information and develop professional or social contacts.
 
  ## Elevator Pitch
- - Introduction
+ - Introduction (State the name of the university and program)
  - Objective (Why you're here)
  - Summarize how your education, experience, strengths etc
  - Keep the conversation alive!
+
+ ## Follow up
+ - Show appreciation
+ - Highlight what you have learnt from the meeting
+ - Create and action/follow-up item
+
+ 

@@ -1,0 +1,48 @@
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: #111;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f0f0f0;
+}
+
+#details section {
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: auto;
+}
+
+#map {
+    float: left;
+    height: 900px;
+    width: 768px;
+    background-image: url(./images/nanaimo-map.png);
+    background-size: cover;
+    display: flex;
+} 
+
+header, #legend, #details {
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.letterA:hover, .letterB:hover, .letterC:hover, .letterD:hover, .letterF:hover {
+    display: flex;
+    border-radius: 16px;
+    transition: transform 0.3s ease-in-out;
+    border: 2px red solid;
+}
