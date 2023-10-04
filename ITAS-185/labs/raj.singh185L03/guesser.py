@@ -9,11 +9,12 @@ import random
 guessing_number = random.randint(1, 100)
 
 while True:
-    my_guess = int(input("Take a guess from 1 - 100: "))
+    my_guess = int(input("I am thinking of a number from 1 to 100 "))
+    
     if my_guess == guessing_number:
+        print(f"Congratulations! That is correct! The number I was thinking of was {guessing_number}.")
         break
     elif my_guess > guessing_number:
-        print(f"Your number is too high. Try a lower number.")
+        print(f"{my_guess} is too high.")
     else:
-        print(f"Your number is too low. Try a higher number.")
-    
+        print(f"{my_guess} is too low.")
