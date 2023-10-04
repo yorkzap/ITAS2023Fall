@@ -1,6 +1,6 @@
 """
 Course: ITAS 185 - Introduction to Programming
-Lab 3: Working with numbers and modules
+Lab 3: Conditional Flow in Python
 Description: This program takes a grade and gives it a message
 """
 
