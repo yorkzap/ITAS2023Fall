@@ -4,18 +4,20 @@ Lab 3: Working with numbers and modules
 Description: This program takes a grade and gives it a message
 """
 
+result_remarks = {
+    (0, 59): "poor",
+    (60, 60): "Squeaked by",
+    (61, 99): "Passed",
+    (100, 100): "Perfect"
+}
+
 while True:
-    grade = float(input("Enter a grade please: "))
+    grade = float(input("Enter a grade please (0 to exit): "))
     if grade == 0:
         break
-    elif grade < 60 and grade > 0:
-        print(f"Your mark of {grade} means the result was poor")
-    elif grade == 100:
-        print(f"Your mark of {grade} means the result was Perfect")
-    elif grade > 60 and grade < 100:
-        print(f"Your mark of {grade} means the result was Passed")
-    elif grade == 60:
-        print(f"Your mark of {grade} means the result was Squeaked by")
+    for (start, end), remark in result_remarks.items():
+        if start <= grade <= end:
+            print(f"Your mark of {grade} means the result was {remark}")
+            break
     else:
         print(f"Your mark of {grade} means the result was Error")
-
