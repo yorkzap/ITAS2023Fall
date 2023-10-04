@@ -1,7 +1,7 @@
 """
 Course: ITAS 185 - Introduction to Programming
 Lab 3: Working with numbers and modules
-Description: This program takes a grade and checks it
+Description: This program takes a grade and gives it a message
 """
 
 while True:
