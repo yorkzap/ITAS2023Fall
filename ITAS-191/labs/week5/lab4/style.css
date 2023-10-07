@@ -78,7 +78,6 @@ html, body {
     text-align: center;
     color: #FFFFFF;
     font-size: 2rem;
-    overflow: none;
   }
 
   table {
@@ -99,3 +98,6 @@ html, body {
     border: 1px solid #000;
   }
   
+  .h4 {
+    display: none;
+  }

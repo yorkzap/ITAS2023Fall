@@ -9,7 +9,9 @@
 <body>
     <div class="wrapper">
       <header class="header">Header</header>
-      <article class="main"><ul>
+      <article class="main">
+        <h4 class="h4">Animals</h4>
+        <ul>
           <li>Cats</li>
           <li>Dogs</li>
           <li>Mice</li>
@@ -19,10 +21,11 @@
         </ul>
       </article>
       <aside class="aside aside-1">
+        <h4 class="h4">Image</h4>
         <picture>
-          <source media="(max-width: 320px)" srcset="./images/320.jpg" sizes="(max-width: 320px) 100vw, 50vw" style="max-width: 100%;" />
-          <source media="(max-width: 560px)" srcset="./images/560.jpg" sizes="(max-width: 560px) 100vw, 50vw" style="max-width: 100%;" />
-          <img src="./images/default.jpg" alt="Chris standing up holding his daughter Elva" style="max-width: 100%;" />
+          <source media="(max-width: 320px)" srcset="./images/320.jpg 320w" sizes="(max-width: 320px) 100vw, 50vw" style="max-width: 100%;">
+          <source media="(max-width: 560px)" srcset="./images/560.jpg 560w" sizes="(max-width: 560px) 100vw, 50vw" style="max-width: 100%;">
+          <img src="./images/default.jpg" alt="Bow to the one" style="max-width: 100%;">
         </picture>      
       </aside>
       <aside class="aside aside-2"></aside>
