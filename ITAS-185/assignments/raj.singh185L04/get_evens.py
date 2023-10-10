@@ -10,8 +10,6 @@ def get_even_list(number_list):
 def get_even_count(even_list):
     return sum(even_list)
 
-integers = ["asds"]
-
 even_list = get_even_list(integers)
 even_count = get_even_count(even_list)
 
