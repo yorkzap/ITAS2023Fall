@@ -1,6 +1,6 @@
 """
 Course: ITAS 185 - Introduction to Programming
-Assignment 1a: A function called get_even_list. 
+Assignment 1: A function called get_even_list. 
 Description: The function is passed a list of integers and returns a list of all the even numbers in the list.
 """
 
