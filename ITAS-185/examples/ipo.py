@@ -3,10 +3,12 @@
 # The purchase amount should be input from the user.
 
 
-# input = purchase price
-# sales Tax Rate (constant)
-# process = calculate total cost (Purchase Amount + Sales Tax)
-# output =  - Total Cost (after adding sales tax)
+# Input = purchase price
+# Sales Tax Rate (constant)
+
+# Process = Calculate total cost (Purchase Amount + Sales Tax)
+
+# Output =  - Total Cost (after adding sales tax)
 
 purchase_price = float(input("Enter the purchase price "))
 sales_tax_rate = .05
