@@ -1,8 +1,9 @@
 """
 Course: ITAS 185 - Introduction to Programming
-Assignment 1: A function called string_along.py
+Assignment: A function called string_along.py
 Description: The functions process a mixed list of integers and floats, returning specific results.
 """
+
 
 def string_to_int(integer_string_list):
     int_list = []
@@ -20,17 +21,11 @@ def count_same(string_list):
     return string_over_2_and_same
 
 def count_vowels(string_with_vowels):
-    vowel_count = 0
-    vowels = "aeiouAEIOU"
-    for letter in string_with_vowels:
-        if letter in vowels:
-            vowel_count += 1
-    return vowel_count
+    return sum(1 for letter in string_with_vowels if letter in "aeiouAEIOU")
 
 string_list = ['121', 'abba', '45.4']
 integer_string_list = ['1', '2 ', '3']
-string_with_vowels = "bcdfghijklmn"
-
+string_with_vowels = "bcdfghijkiilmn"
 
 print(count_same(string_list))
 print(string_to_int(integer_string_list))
