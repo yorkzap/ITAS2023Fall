@@ -1,6 +1,6 @@
 """
 Course: ITAS 185 - Introduction to Programming
-Assignment 1: A function called mixed_tape.py
+Lab04: A function called mixed_tape.py
 Description: The functions process a mixed list of integers and floats, returning specific results.
 """
 
