@@ -29,15 +29,31 @@ def product_floats(mixed_type_list):
     return product
 
 mixed_type_list = [2, 5.0, "cat", 10, 43.2, True]
- 
-# Print the list of integers from the mixed_type_list
+
+# Expected: [2, 10]
 print("List of Integers:", only_integers(*mixed_type_list))
 
-# Print the maximum integer (if any) from the list
+# Actual result
+print("Actual Result (List of Integers):", only_integers(*mixed_type_list))
+print(" ")
+
+# Expected: 10
 print("Maximum Integer:", max_integer(mixed_type_list))
 
-# Print the sum of integers from the list
-print("Sum of integers: ", sum_integer(mixed_type_list))
+# Actual result
+print("Actual Result (Maximum Integer):", max_integer(mixed_type_list))
+print(" ")
 
-# Print the product of floats from the list
-print("Product of floats: ", product_floats(mixed_type_list))
+# Expected: 12
+print("Sum of integers:", sum_integer(mixed_type_list))
+
+# Actual result
+print("Actual Result (Sum of integers):", sum_integer(mixed_type_list))
+print(" ")
+
+# Expected: 216.0
+print("Product of floats:", product_floats(mixed_type_list))
+
+# Actual result
+print("Actual Result (Product of floats):", product_floats(mixed_type_list))
+print(" ")
