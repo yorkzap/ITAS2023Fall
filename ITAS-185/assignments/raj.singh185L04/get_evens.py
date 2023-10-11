@@ -19,15 +19,16 @@ even_count = get_even_count(even_list)
 expected_even_list = [4, 2, 1024, 56]
 expected_even_count = sum(expected_even_list)
 
-# Print the list of even numbers
+# Validate the list of even numbers
 print(f"List of Even Numbers: {even_list}")
+if even_list == expected_even_list:
+    print("The function get_even_list worked properly!")
+else:
+    print("The function get_even_list did not work as expected.")
 
-# Print the sum of even numbers
+# Validate the sum of even numbers
 print(f"Sum of Even Numbers: {even_count}")
-
-# Validate the even sum
 if even_count == expected_even_count:
     print("The function get_even_count worked properly!")
 else:
     print("The function get_even_count did not work as expected.")
-
