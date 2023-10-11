@@ -11,13 +11,6 @@ def string_to_int(integer_string_list):
             int_list.append(int(item.strip()))
     return int_list
 
-integer_string_list = ['1', '2 ', '3']
-
-
-print(string_to_int(integer_string_list))
-
-
-string_list = ['sdfsd', 'sssddfdfdsss ', 'sdfds', 'hhhhh343253hhhh']
 
 def count_same(string_list):
     string_over_2_and_same = 0
@@ -26,4 +19,19 @@ def count_same(string_list):
             string_over_2_and_same += 1
     return string_over_2_and_same
 
+def count_vowels(string_with_vowels):
+    vowel_count = 0
+    vowels = "aeiouAEIOU"
+    for letter in string_with_vowels:
+        if letter in vowels:
+            vowel_count += 1
+    return vowel_count
+
+string_list = ['121', 'abba', '45.4']
+integer_string_list = ['1', '2 ', '3']
+string_with_vowels = "bcdfghijklmn"
+
+
 print(count_same(string_list))
+print(string_to_int(integer_string_list))
+print(count_vowels(string_with_vowels))
