@@ -63,6 +63,7 @@ textarea {
 .form-inline select {
     display: inline-block;
     flex: 0 1 auto;
+    width: 2.8rem;
 }
 
 .label-to-right {
