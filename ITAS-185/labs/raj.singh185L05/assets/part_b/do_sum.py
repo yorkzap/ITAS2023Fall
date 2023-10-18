@@ -24,4 +24,3 @@ def sum_column(filename):
     return sum_list
 
 print(sum_column(filename))
-
