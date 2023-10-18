@@ -38,4 +38,7 @@
  - Highlight what you have learnt from the meeting
  - Create and action/follow-up item
 
- 
+ ## Good Covet Letter Points
+ - Mention that you met so and so at so and so event to assert pre-approved application
+ - Offer best skills
+ - Personality
