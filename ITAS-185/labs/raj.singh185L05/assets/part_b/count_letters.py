@@ -26,5 +26,6 @@ count_vowels = len([char for letter in range(len(file_list)) for char in file_li
 count_consonants = len([char for letter in range(len(file_list)) for char in file_list[letter] for consonant in consonants if char == consonant])
 
 # Print the counts of vowels and consonants
-print(count_vowels)
-print(count_consonants)
+print(f"Total number of vowels: {count_vowels}")
+print(f"Total number of consonants: {count_consonants}")
+
