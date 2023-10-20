@@ -8,30 +8,30 @@ Description: A program that allows users to manage a movie list where they can a
 
 
 def main():
-    while True:  # Start an infinite loop
-        # Display the menu options
-        print(menu_options)
-
-        # Prompt the user to enter their choice
-        choice = input("Enter your choice (1-6): ")
-
-        # Error handling for values that are not between the options 1-6
-        while not choice.isdigit() or int(choice) < 1 or int(choice) > 6:
-            choice = input(f"\nChoice wrong. {BOLD}Enter a number from 1-6 please:{ENDC}\n{menu_options}")
-
-        # Convert choice back to integer for further processing
-        choice = int(choice)
-
-        # Call the choice_handler function with the choice value as the argument
-        choice_handler(choice)
+    while True:
+        display_menu()
+        choice = get_user_choice()
+        handle_choice(choice)
 
 
-def get_movie_name():
-    return input("Enter the name of the movie: ")
+def display_menu():
+    print(f"{BOLD}Welcome to your movie list. You may:{ENDC}")
+    print(menu_options)
 
 
-def choice_handler(choice):
-    if choice in [1, 2, 3, 4]:  # Only prompt for movie name for choices 1-4
+def get_user_choice():
+    choice = input("Enter your choice (1-6): ")
+    while not is_valid_choice(choice):
+        choice = input(f"\nChoice wrong. {BOLD}Enter a number from 1-6 please:{ENDC}\n{menu_options}")
+    return int(choice)
+
+
+def is_valid_choice(choice):
+    return choice.isdigit() and 1 <= int(choice) <= 6
+
+
+def handle_choice(choice):
+    if choice in [1, 2, 3, 4]:
         movie_name = get_movie_name()
 
     if choice == 1:
@@ -48,47 +48,53 @@ def choice_handler(choice):
         log_off()
 
 
-def case_insensitive_search(movie_name, movies):
-    """
-    Perform a case-insensitive search for the movie in the movies dictionary
-    """
-    return next((key for key in movies if key.lower() == movie_name.lower()), None)
+def get_movie_name():
+    return input("Enter the name of the movie: ")
 
 
 def add_movie(movie_name):
     genre = input("Enter the genre of the movie: ")
     movies[movie_name] = genre
-    print(f"\n{BOLD}Movie added successfully!{ENDC}\n")
+    display_message("Movie added successfully!")
     display_movies(movies)
 
 
 def update_movie(movie_name):
-    movie_key = case_insensitive_search(movie_name, movies)
-    if movie_key:
+    if movie_exists(movie_name):
         genre = input("Enter the genre of the movie: ")
-        movies[movie_key] = genre
-        print(f"\n{BOLD}Movie updated successfully!{ENDC}\n")
+        movies[movie_name] = genre
+        display_message("Movie updated successfully!")
         display_movies(movies)
     else:
-        print(f"{movie_name} is not found in the movie dictionary.")
+        movie_not_found_message(movie_name)
 
 
 def delete_movie(movie_name):
-    movie_key = case_insensitive_search(movie_name, movies)
-    if movie_key:
-        del movies[movie_key]
-        print(f"\n{BOLD}Movie deleted successfully!{ENDC}\n")
+    if movie_exists(movie_name):
+        del movies[movie_name]
+        display_message("Movie deleted successfully!")
         display_movies(movies)
     else:
-        print(f"{movie_name} is not found in the movie dictionary.")
+        movie_not_found_message(movie_name)
 
 
 def genre_movie(movie_name):
-    movie_key = case_insensitive_search(movie_name, movies)
-    if movie_key:
-        print(f"\n{BOLD}The genre of the movie is: {movies[movie_key]}{ENDC}\n")
+    if movie_exists(movie_name):
+        display_message(f"The genre of the movie is: {movies[movie_name]}")
     else:
-        print(f"{movie_name} is not found in the movie dictionary.")
+        movie_not_found_message(movie_name)
+
+
+def movie_exists(movie_name):
+    return movie_name in movies
+
+
+def movie_not_found_message(movie_name):
+    print(f"{movie_name} is not found in the movie dictionary.")
+
+
+def display_message(message):
+    print(f"\n{BOLD}{message}{ENDC}\n")
 
 
 def display_movies(movies):
@@ -99,7 +105,7 @@ def display_movies(movies):
 
 
 def log_off():
-    print(f"\n{BOLD}Thank you for using the program!{ENDC}\n")
+    display_message("Thank you for using the program!")
     exit()
 
 
@@ -108,7 +114,6 @@ BOLD = "\033[1m"
 ENDC = "\033[0m"
 
 # Menu options
-print(f"{BOLD}Welcome to your movie list. You may:{ENDC}")
 menu_options = """
 \t 1. Add a movie and its genre
 \t 2. Update the genre of a movie
