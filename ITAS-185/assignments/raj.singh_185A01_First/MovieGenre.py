@@ -26,7 +26,7 @@ def display_menu():
 
 
 def format_list(genre):
-    """Formats the genre for display."""
+    """Formats the list genres for display for better readability."""
     return ', '.join(genre) if isinstance(genre, list) else genre
 
 
@@ -128,7 +128,6 @@ def search_movie_by_partial_name(partial_name):
         print("Invalid choice. Please select a valid number.")
 
 
-
 def confirmation(prompt_message):
     response = input(f"{prompt_message}\n (yes/no): ").strip().lower()
     return response == "yes"
@@ -137,7 +136,7 @@ def confirmation(prompt_message):
 def add_movie(movie_name):
     movie_key = case_insensitive_search_and_handle(movie_name, display_not_found=False)
     if movie_key:
-        display_message(f"This movie already exists so we cannot add it. If you want to update its genre, please select option 2 from the main menu.", YELLOW)
+        display_message(f"This movie already exists. To update its genre, please select option 2 from the main menu.", YELLOW)
     else:
         genres = get_genre()
         movies[movie_name] = genres if len(genres) > 1 else genres[0]
@@ -147,7 +146,7 @@ def add_movie(movie_name):
 def update_movie_genre(movie_name):
     movie_key = get_or_search_movie(movie_name)
     if movie_key:
-        genres = get_genre()  # This can either be a list or a single string
+        genres = get_genre()  # This can either be a list or a single string (if only one genre is entered)
         movies[movie_key] = genres
         display_message(f"Movie genre for {movie_key} updated to {format_list(genres)}!", GREEN)
 
@@ -186,7 +185,6 @@ def display_movies():
     for movie, genre in movies.items():
         print(f"{movie:<{max_movie_name_length + 2}} - {format_list(genre)}")
     print("\n")
-
 
 
 def log_off():
