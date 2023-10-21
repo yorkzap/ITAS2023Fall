@@ -7,7 +7,6 @@ Description: A program that allows users to manage a movie list where they can a
 """
 
 def main():
-    print(f"{BOLD}{BLUE}Greetings!{ENDC}\n")
     print("This program allows you to manage your list of movies and their genres.")
     
     while True:
