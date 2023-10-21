@@ -21,7 +21,7 @@ def continue_or_exit():
 
 
 def display_menu():
-    print(f"{BOLD}Welcome to your movie list. You may:{ENDC}")
+    print(f"{BOLD}{BLUE}Welcome to your movie list. You may:{ENDC}")
     print(menu_options)
 
 
@@ -31,7 +31,7 @@ def format_list(genre):
 
 
 def get_user_choice():
-    choice = input(f"{BOLD}Enter your choice (1-6): {ENDC}")
+    choice = input(f"{YELLOW}{BOLD}Enter your choice (1-6): {ENDC}")
     while not is_valid_choice(choice):
         choice = input(f"\nChoice wrong. {BOLD}Enter a number from 1-6 please:{ENDC}\n{menu_options}")
     return int(choice)
@@ -66,11 +66,11 @@ def handle_movie_related_choice(choice, movie_name):
 
 
 def get_movie_name():
-    return input(f"{BOLD}Enter the name of the movie: {ENDC}")
+    return input(f"{YELLOW}{BOLD}Enter the name of the movie: {ENDC}")
 
 
 def get_genre():
-    genres = input(f"{BOLD}Enter the genre(s) of the movie (separated by comma if multiple): {ENDC}").split(",")
+    genres = input(f"{YELLOW}{BOLD}Enter the genre(s) of the movie (separated by comma if multiple): {ENDC}").split(",")
     return [genre.strip() for genre in genres]
 
 
@@ -89,14 +89,14 @@ def get_or_search_movie(movie_name):
 def genre_movie(movie_name):
     movie_key = get_or_search_movie(movie_name)
     if movie_key:
-        display_message(f"Gotcha! The genre for '{movie_key}' is: {format_list(movies[movie_key])}")
+        display_message(f"Gotcha! The genre for '{movie_key}' is: {format_list(movies[movie_key])}", color=GREEN)
 
 
 
 def case_insensitive_search_and_handle(movie_name, display_not_found=True):
     movie_key = next((key for key in movies if key.lower() == movie_name.lower()), None)
     
-    if movie_key and confirmation(f"{BOLD}Is '{movie_key}' the movie you were referring to?{ENDC}"):
+    if movie_key and confirmation(f"{BOLD}Is '{movie_key}' the movie you were referring to?{ENDC}\n"):
         return movie_key
     elif display_not_found:
         display_movie_not_found(movie_name)
@@ -111,10 +111,10 @@ def search_movie_by_partial_name(partial_name):
         print(f"\t There's no movie called {partial_name} in our list.\n")
         return []
     
-    print(f"We found movies that match your search '{partial_name}': {format_list(matched_movies)}")
+    print(f"\tWe found movies that match your search '{partial_name}': {format_list(matched_movies)}")
     
     if len(matched_movies) == 1:
-        if confirmation(f"{BOLD}Is '{matched_movies[0]}' the movie you were referring to?{ENDC}"):
+        if confirmation(f"\t{BOLD}Is '{matched_movies[0]}' the movie you were referring to?{ENDC}\n"):
             return [matched_movies[0]]
 
     print("Multiple movies found starting with the given name. Please select one:")
@@ -130,18 +130,18 @@ def search_movie_by_partial_name(partial_name):
 
 
 def confirmation(prompt_message):
-    response = input(f"{prompt_message} (yes/no): ").strip().lower()
+    response = input(f"{prompt_message}\n (yes/no): ").strip().lower()
     return response == "yes"
 
 
 def add_movie(movie_name):
     movie_key = case_insensitive_search_and_handle(movie_name, display_not_found=False)
     if movie_key:
-        display_message(f"This movie already exists so we cannot add it. If you want to update its genre, please select option 2 from the main menu.")
+        display_message(f"This movie already exists so we cannot add it. If you want to update its genre, please select option 2 from the main menu.", YELLOW)
     else:
         genres = get_genre()
         movies[movie_name] = genres if len(genres) > 1 else genres[0]
-        display_message("Movie added successfully!")
+        display_message("Movie added successfully!", GREEN)
 
 
 def update_movie_genre(movie_name):
@@ -149,7 +149,7 @@ def update_movie_genre(movie_name):
     if movie_key:
         genres = get_genre()  # This can either be a list or a single string
         movies[movie_key] = genres
-        display_message(f"Movie genre for {movie_key} updated to {format_list(genres)}!")
+        display_message(f"Movie genre for {movie_key} updated to {format_list(genres)}!", GREEN)
 
 
 def delete_movie(movie_name):
@@ -157,21 +157,31 @@ def delete_movie(movie_name):
     if movie_key:
         if confirmation(f"{BOLD}Are you sure you want to delete the movie {movie_key}?{ENDC}"):
             del movies[movie_key]
-            display_message(f"Movie {movie_key} deleted successfully!")
+            display_message(f"Movie {movie_key} deleted successfully!", GREEN)
         else:
             display_message(f"Deletion of movie {movie_key} cancelled.")
 
 
 def display_movie_not_found(movie_name):
-    display_message(f"{movie_name} is not found in the movie dictionary.")
+    display_message(f"{movie_name} is not found in the movie dictionary.", color=RED)
 
 
-def display_message(message):
-    print(f"\n{BOLD}{message}{ENDC}\n")
+def display_message(message, color=None):
+    
+    if color == RED:
+        print(f"\n{BOLD}{RED}{message}{ENDC}\n")
+    elif color == GREEN:
+        print(f"\n{BOLD}{GREEN}{message}{ENDC}\n")
+    elif color == BLUE:
+        print(f"\n{BOLD}{BLUE}{message}{ENDC}\n")
+    elif color == YELLOW:
+        print(f"\n{BOLD}{YELLOW}{message}{ENDC}\n")
+    else:
+        print(message)
 
 
 def display_movies():
-    print(f"\n{BOLD}Here is the current list of movies and their genres:{ENDC}\n")
+    print(f"\n{BOLD}{BLUE}Here is the current list of movies and their genres:{ENDC}\n")
     max_movie_name_length = max([len(movie) for movie in movies.keys()])
     for movie, genre in movies.items():
         print(f"{movie:<{max_movie_name_length + 2}} - {format_list(genre)}")
@@ -180,13 +190,17 @@ def display_movies():
 
 
 def log_off():
-    display_message("Thank you for using the program!")
+    display_message("Thank you for using the program!", GREEN)
     exit()
 
 
 # ANSI escape codes
 BOLD = "\033[1m"
 ENDC = "\033[0m"
+GREEN = "\033[92m"
+RED = "\033[91m"
+BLUE = "\033[94m"
+YELLOW = "\033[93m"
 
 # Menu options
 menu_options = """
