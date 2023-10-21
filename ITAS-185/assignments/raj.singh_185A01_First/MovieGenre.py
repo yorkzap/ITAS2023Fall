@@ -35,7 +35,7 @@ def format_list(genre):
 def get_user_choice():
     choice = input(f"{YELLOW}{BOLD}Enter your choice (1-6): {ENDC}")
     while not is_valid_choice(choice):
-        choice = input(f"\nChoice wrong. {BOLD}Enter a number from 1-6 please:{ENDC}\n{menu_options}")
+        choice = input(f"\n{BOLD}{RED}Oops! Invalid choice.{ENDC} Enter a number from 1-6 please:\n{menu_options}")
     return int(choice)
 
 
@@ -113,7 +113,7 @@ def search_movie_by_partial_name(partial_name):
         print(f"\t There's no movie called {partial_name} in our list.\n")
         return []
     
-    print(f"\tWe found movies that match your search '{partial_name}': {format_list(matched_movies)}")
+    print(f"\tHowever, we found movies that match your search '{partial_name}': {format_list(matched_movies)}")
     
     if len(matched_movies) == 1:
         if confirmation(f"\t{BOLD}Is '{matched_movies[0]}' the movie you were referring to?{ENDC}\n"):
