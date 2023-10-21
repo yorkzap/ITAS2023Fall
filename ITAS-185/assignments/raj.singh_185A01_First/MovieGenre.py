@@ -220,12 +220,12 @@ def log_off():
 
 
 # ANSI escape codes
-BOLD = "\033[1m"
-ENDC = "\033[0m"
-GREEN = "\033[92m"
-RED = "\033[91m"
-BLUE = "\033[94m"
-YELLOW = "\033[93m"
+BOLD = "\033[1m"     # Makes the text bold
+ENDC = "\033[0m"     # Resets all formatting to the default
+GREEN = "\033[92m"   # Sets the text color to green
+RED = "\033[91m"     # Sets the text color to red
+BLUE = "\033[94m"    # Sets the text color to blue
+YELLOW = "\033[93m"  # Sets the text color to yellow
 
 # Menu options
 menu_options = """
