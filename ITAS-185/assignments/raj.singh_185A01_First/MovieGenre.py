@@ -181,11 +181,36 @@ def display_message(message, color=None):
         print(message)
 
 
+def pagination(movie_list, page, page_size=1000):
+    start_index = (page - 1) * page_size
+    end_index = start_index + page_size
+    return movie_list[start_index:end_index]
+
+
 def display_movies():
+    PAGE_SIZE = 5  # Titles shown per page
+    
     print(f"\n{BOLD}{BLUE}Here is the current list of movies and their genres:{ENDC}\n")
     max_movie_name_length = max([len(movie) for movie in movies.keys()])
-    for movie, genre in movies.items():
-        print(f"{movie:<{max_movie_name_length + 2}} - {format_list(genre)}")
+    
+    # Convert dictionary to list for easy indexing
+    movie_list = list(movies.items())
+    num_pages = len(movie_list) // PAGE_SIZE + (1 if len(movie_list) % PAGE_SIZE else 0)
+
+    current_page = 1
+    while current_page <= num_pages:
+        for movie, genre in pagination(movie_list, current_page, PAGE_SIZE):
+            print(f"{movie:<{max_movie_name_length + 2}} - {format_list(genre)}")
+
+        # If there's another page, ask the user if they want to see it
+        if current_page < num_pages:
+            proceed = input(f"\n{BOLD}Displaying page {current_page}/{num_pages}. {BLUE}Would you like to see the next page?{ENDC} \n(yes/no) ").strip().lower()
+            if proceed != 'yes':
+                break
+            current_page += 1
+        else:
+            break
+
     print("\n")
 
 
@@ -212,14 +237,36 @@ menu_options = """
 \t 6. Exit the program
 """
 
+
 # Sample movies dictionary
 movies = {
     "Wall-E": "Animated",
     "Life of Brian": "Comedy",
     "The Matrix": "Sci-Fi",
     "Titanic": "Drama",
-    "Toy Story": "Animated"
+    "Toy Story": "Animated",
+    "Inception": "Sci-Fi",
+    "The Godfather": "Drama",
+    "Jurassic Park": "Adventure",
+    "Shrek": "Animated",
+    "Pulp Fiction": "Crime",
+    "The Dark Knight": "Action",
+    "Frozen": "Animated",
+    "Jaws": "Thriller",
+    "The Shawshank Redemption": "Drama",
+    "Avatar": "Sci-Fi",
+    "Finding Nemo": "Animated",
+    "Forrest Gump": "Drama",
+    "A Beautiful Mind": "Drama",
+    "Braveheart": "Historical",
+    "Despicable Me": "Animated",
+    "Interstellar": "Sci-Fi",
+    "The Hangover": "Comedy",
+    "Iron Man": "Action",
+    "Up": "Animated",
+    "Mad Max: Fury Road": "Action"
 }
+
 
 if __name__ == '__main__':
     main()
