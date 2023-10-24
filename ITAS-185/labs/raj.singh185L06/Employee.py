@@ -13,3 +13,4 @@ class Employee:
 
     def get_info(self):
         return f"Name: {self.emp_name}\tID: {self.id_number}\tDepartment: {self.department}\tPosition: {self.position}"
+    
