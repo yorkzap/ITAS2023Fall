@@ -247,7 +247,7 @@ movies = {
     "Toy Story": "Animated",
     "Inception": "Sci-Fi",
     "The Godfather": "Drama",
-    "Before I self Destruct": "Drama",
+    "Before I self Destruct": "Drama"
 }
 
 
