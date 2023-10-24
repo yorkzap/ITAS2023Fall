@@ -247,24 +247,7 @@ movies = {
     "Toy Story": "Animated",
     "Inception": "Sci-Fi",
     "The Godfather": "Drama",
-    "Jurassic Park": "Adventure",
-    "Shrek": "Animated",
-    "Pulp Fiction": "Crime",
-    "The Dark Knight": "Action",
-    "Frozen": "Animated",
-    "Jaws": "Thriller",
-    "The Shawshank Redemption": "Drama",
-    "Avatar": "Sci-Fi",
-    "Finding Nemo": "Animated",
-    "Forrest Gump": "Drama",
-    "A Beautiful Mind": "Drama",
-    "Braveheart": "Historical",
-    "Despicable Me": "Animated",
-    "Interstellar": "Sci-Fi",
-    "The Hangover": "Comedy",
-    "Iron Man": "Action",
-    "Up": "Animated",
-    "Mad Max: Fury Road": "Action"
+    "Before I self Destruct": "Drama",
 }
 
 
