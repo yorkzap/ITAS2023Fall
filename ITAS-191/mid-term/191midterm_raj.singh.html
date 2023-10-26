@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ITAS 191 Midterm - Rabbits of VIU</title>
+
+    <style>
+			/*
+				BASIC EXAMPLE STYLING
+			*/
+
+      *,
+      *:before,
+      *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #2980b9;
+        color: #fff;
+        font-family: Helvetica;
+        margin: 0;
+      }
+
+      header,
+      nav,
+      section {
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        margin-bottom: 10px;
+        border-radius: 3px;
+      }
+
+      header {
+        padding: 20px 0;
+      }
+
+      nav,
+      section {
+        padding: 100px 0;
+			}
+
+      /*
+				RESPONSIVE LAYOUT CSS
+			*/
+      .wrapper {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      @media screen and (min-width: 800px) {
+        .wrapper {
+          max-width: 90%;
+        }
+
+        header {
+          width: 100%;
+        }
+
+        nav,
+        section {
+          float: left;
+        }
+
+        nav {
+          width: 20.83333%;
+          margin-right: 1.041667%;
+        }
+
+        section {
+          width: 78.125%;
+        }
+      }
+
+      @media screen and (min-width: 1000px) {
+        .wrapper {
+          max-width: 90%;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /*
+	    	ADD YOUR OWN CSS BELOW THIS COMMENT
+			*/
+
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Rabbits of VIU</h1>
+      </header>
+
+      <nav>
+        <ol>
+          <li>Zen Rabbits</li>
+          <li>Gym Rabbits</li>
+          <li>The Wilds</li>
+        </ol>
+      </nav>
+
+      <section id="content">
+        <div id="map">
+          <img src="https://dev.itas.ca/~brandon.brown/ITAS191/midterm/VIU_RabbitsMap.png" />
+        </div>
+
+        <div id="descriptions">
+          <h2>Descriptions</h2>
+          <div>
+            <h3>Zen Rabbits</h3>
+          </div>
+          <div>
+            <h3>Gym Rabbits</h3>
+          </div>
+          <div>
+            <h3>The Wilds</h3>
+          </div>
+        </div>
+
+        <div id="topFiveRabbits">
+          <h2>Top Five Rabbits</h2>
+        </div>
+
+        <div id="form">
+          <h2>Report a Rabbit</h2>
+          <form></form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
