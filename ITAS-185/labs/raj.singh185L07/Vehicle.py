@@ -33,7 +33,18 @@ class Vehicle:
     def __eq__(self, other):
         return True if self.top_speed == other.top_speed else False
     
-class Car:
+class Car(Vehicle):
     def __init__(self, color, manufacturer, speed, top_speed, year, number_of_doors, is_electric):
+        super().__init__(color, manufacturer, speed, top_speed, year) # Referring to the constructor of the Vehicle class
         self.number_of_doors = int(number_of_doors)
         self.is_electric = bool(is_electric)
+        
+    def accelerate(self):
+        super().accelerate(2)
+        
+    def __str__(self):
+        initial_string = super().__str__()
+        if self.is_electric:
+            return f"{initial_string}, It has {self.number_of_doors} doors and is electric"
+        else:
+            return f"{initial_string}, It has {self.number_of_doors} doors and is not electric"
