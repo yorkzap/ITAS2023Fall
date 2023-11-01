@@ -26,3 +26,10 @@ class Vehicle:
         """
         self.speed = self.speed - amount
         self.speed = 0 if self.speed < 0 else self.speed
+        
+    def __str__(self, year, color, manufacturer, speed, top_speed):
+        return f"{self.year} {self.color} {self.manufacturer} is travelling {self.speed} kph with a maximum speed of {self.top_speed} kph"
+    
+    # 6.	Create the __eq__ method that returns true if the top speed of the two Vehicles is the same.
+    def __eq__(self, other):
+        return True if self.top_speed == other.top_speed else False
