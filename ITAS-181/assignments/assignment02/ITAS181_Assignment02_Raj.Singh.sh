@@ -7,13 +7,16 @@ csv_file="./data.csv"
 year1_uid_start=1000
 year2_uid_start=2000
 
-#Test if the variable works (remove later)
-cat "$csv_file"
-
+# Reading the CSV and creating users with the full name in the comment field
 while IFS=',' read -r firstname lastname dob year
 do
     # Extract the username from the first name and last name, lowercase it
     username="${firstname:0:1}${lastname,,}"
+
+    # Capitalize the first letter of first and last name, and then join them with a comma and space
+    proper_lastname=$(echo "${lastname^}")
+    proper_firstname=$(echo "${firstname^}")
+    full_name="$proper_lastname, $proper_firstname"
 
     # Determine the group based on the year
     groupname=""
@@ -31,8 +34,9 @@ do
 
     # Check if groupname is not empty
     if [ ! -z "$groupname" ]; then
-        # Create the user with the home directory and set the user to the correct group
-        sudo useradd -m -u "$userid" -d "/home/$username" -g "$groupname" "$username"
+        # Create the user with the home directory, set the user to the correct group,
+        # and add the full name in the 'Lastname, Firstname' format to the comment field
+        sudo useradd -m -u "$userid" -c "$full_name" -d "/home/$username" -g "$groupname" "$username"
     fi
 
 done < "$csv_file"
