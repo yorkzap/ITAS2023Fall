@@ -13,8 +13,107 @@
   </head>
   <body>
     <!-- Task 1: Must have a navbar, and ensure your CSS transition and Tailwind transtion links in navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Lab07</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./css-transition.html">CSS Transition</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tailwind-transition.html">TWCSS Transition</a>
+            </li>
+          </ul>
+          <div class="d-flex me-0">
+            <form class="d-flex" action="https://api.thecatapi.com/v1/images/search" method="GET">
+              <input type="hidden" name="format" value="json">
+              <input class="form-control me-2" type="search" placeholder="Search breeds" aria-label="Search" name="q">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
     <!-- Task 2: Must have a card -->
+    <div class="container-fluid" style="height: 100vh;">
+      <div class="row h-100">
+        <div class="col d-flex justify-content-center align-items-center">
+          <div class="card">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Use search to view cats</h5>
+              <p class="card-text">If you search something then you will see a cat image</p>
+              <button class="btn btn-primary" id="shuffle">Shuffle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
     <!-- Task 3: Must have a simple form -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+          const searchTerm = document.querySelector('input[type="search"]').value;
+          const endpoint = `https://api.thecatapi.com/v1/images/search?q=${encodeURIComponent(searchTerm)}`;
+      
+          fetch(endpoint)
+            .then(response => response.json())
+            .then(data => {
+              // Assuming the API returns an array and we want the first item
+              const imageUrl = data[0].url;
+              document.querySelector('.card-img-top').src = imageUrl;
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        });
+      });
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const shuffleButton = document.getElementById('shuffle');
+        const catImage = document.querySelector('.card-img-top');
+      
+        form.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+          fetchCatImage();
+        });
+      
+        shuffleButton.addEventListener('click', function() {
+          fetchCatImage();
+        });
+      
+        function fetchCatImage() {
+          // If you want to shuffle random images, you may remove the query parameters
+          const endpoint = 'https://api.thecatapi.com/v1/images/search';
+      
+          fetch(endpoint)
+            .then(response => response.json())
+            .then(data => {
+              // Assuming the API returns an array and we want the first item
+              const imageUrl = data[0].url;
+              catImage.src = imageUrl;
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
+        }
+      });
+      
+      </script>
+      
+
+
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
