@@ -48,3 +48,52 @@ class Car(Vehicle):
             return f"{initial_string}, It has {self.number_of_doors} doors and is electric"
         else:
             return f"{initial_string}, It has {self.number_of_doors} doors and is not electric"
+        
+"""
+9.	Create a class called Transport which extends Vehicle. It has the extra attribute of: 
+payload: float
+Method	Purpose
+Constructor	A constructor that accepts all attributes and set the values accordingly by first calling the super method and then assigning the extra attribute
+accelerate	Has NO parameters. Overrides the accelerate method of the Vehicle class and calls the Vehicle class accelerate method with the value 1
+toString()	Calls the super method to get the initial string and adds: 
+It can carry a payload of payload tons to end of the string. For example,
+1999 brown Mac is travelling 100 kph with a maximum speed of 160 kph. It can carry a payload of 300 tons.
+"""
+
+class Transport(Vehicle):
+    def __init__(self, color, manufacturer, speed, top_speed, year, payload):
+        super().__init__(color, manufacturer, speed, top_speed, year)
+        self.payload = float(payload)
+        
+    def accelerate(self):
+        super().accelerate(1)
+        
+    def __str__(self):
+        initial_string = super().__str__()
+        return f"{initial_string}. It can carry a payload of {self.payload} tons"
+    
+"""10.	Create a class called Pickup which extends Car. 
+Method	Purpose
+Constructors	One constructor that accepts all attributes and set the values accordingly by calling the super method.
+accelerate	Has no parameters and calls the accelerate method of the Car class with the value 1.5
+"""
+
+class Pickup(Car):
+    def __init__(self, color, manufacturer, speed, top_speed, year, number_of_doors, is_electric):
+        super().__init__(color, manufacturer, speed, top_speed, year, number_of_doors, is_electric)
+        
+    def accelerate(self):
+        super().accelerate(1.5)
+
+"""11.	Create a class called SportsCar which extends Car.
+Method	Purpose
+Constructor	One constructor that accepts all attributes and set the values accordingly by calling the super method.
+accelerate	Has no parameters and calls the accelerate method of the Car class with the value 4
+"""
+
+class SportsCar(Car):
+    def __init__(self, color, manufacturer, speed, top_speed, year, number_of_doors, is_electric):
+        super().__init__(color, manufacturer, speed, top_speed, year, number_of_doors, is_electric)
+        
+    def accelerate(self):
+        super().accelerate(4)
