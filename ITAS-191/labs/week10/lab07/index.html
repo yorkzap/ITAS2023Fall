@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- Task 1: Must have a navbar, and ensure your CSS transition and Tailwind transtion links in navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Lab07</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
           fetch(endpoint)
             .then(response => response.json())
             .then(data => {
-              // Assuming the API returns an array and we want the first item
+              // We want the first item
               const imageUrl = data[0].url;
               document.querySelector('.card-img-top').src = imageUrl;
             })
@@ -93,13 +93,13 @@
         });
       
         function fetchCatImage() {
-          // If you want to shuffle random images, you may remove the query parameters
+          // Remove the query parameters if you want to shuffle random images
           const endpoint = 'https://api.thecatapi.com/v1/images/search';
       
           fetch(endpoint)
             .then(response => response.json())
             .then(data => {
-              // Assuming the API returns an array and we want the first item
+              // We want the first item
               const imageUrl = data[0].url;
               catImage.src = imageUrl;
             })
