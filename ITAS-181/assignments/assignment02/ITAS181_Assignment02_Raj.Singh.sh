@@ -42,7 +42,7 @@ do
     elif [ "$year" = "Year 2" ]; then
         groupname="ITAS_YR2"
         userid=$year2_uid_start
-        #Increment the UID for the next Year 2 student
+        # Increment the UID for the next Year 2 student
         ((year2_uid_start++))
     fi
 
@@ -59,6 +59,11 @@ do
             
             # Format DOB from mm/dd/yy to yymmdd and initials to lowercase for the password
             IFS='/' read -r mm dd yy <<< "$dob"
+
+            # Add leading zeroes if missing
+            mm=$(printf "%02d" $mm)
+            dd=$(printf "%02d" $dd)
+
             # Extract the first letter of the first name, lowercase it
             first_initial="${firstname,,}"
             first_initial="${first_initial:0:1}"
