@@ -86,7 +86,7 @@ do
         echo "Groupname for $username is empty, skipping user creation."
     fi
 
-    # Increment the user creation counter
+    # Increment the counter used for user creation
     ((user_count++))
 
     echo "User #${user_count} processed."
