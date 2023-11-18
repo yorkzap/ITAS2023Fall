@@ -11,8 +11,14 @@ year2_uid_start=2000
 
 # Ensure the groups exist
 echo "Checking if groups exist..."
-sudo getent group ITAS_YR1 || sudo groupadd ITAS_YR1
-sudo getent group ITAS_YR2 || sudo groupadd ITAS_YR2
+if ! sudo getent group ITAS_YR1 > /dev/null 2>&1; then
+  sudo groupadd ITAS_YR1
+  echo "Group ITAS_YR1 created."
+fi
+if ! sudo getent group ITAS_YR2 > /dev/null 2>&1; then
+  sudo groupadd ITAS_YR2
+  echo "Group ITAS_YR2 created."
+fi
 echo "Groups checked."
 
 # User creation iteration counter
@@ -37,13 +43,11 @@ do
     if [ "$year" = "Year 1" ]; then
         groupname="ITAS_YR1"
         userid=$year1_uid_start
-        # Increment the UID for the next Year 1 student
-        ((year1_uid_start++))
+        ((year1_uid_start++)) # Increment the UID for the next Year 1 student
     elif [ "$year" = "Year 2" ]; then
         groupname="ITAS_YR2"
         userid=$year2_uid_start
-        # Increment the UID for the next Year 2 student
-        ((year2_uid_start++))
+        ((year2_uid_start++)) # Increment the UID for the next Year 2 student
     fi
 
     # Check if groupname is not empty
@@ -59,20 +63,14 @@ do
             
             # Format DOB from mm/dd/yy to yymmdd and initials to lowercase for the password
             IFS='/' read -r mm dd yy <<< "$dob"
-
-            # Add leading zeroes if missing
-            mm=$(printf "%02d" $mm)
+            mm=$(printf "%02d" $mm) # Add leading zeroes if missing
             dd=$(printf "%02d" $dd)
 
-            # Extract the first letter of the first name, lowercase it
-            first_initial="${firstname,,}"
-            first_initial="${first_initial:0:1}"
-            
-            # Extract the first letter of the last name, lowercase it
-            last_initial="${lastname,,}"
-            last_initial="${last_initial:0:1}"
+            # Extract the first letter of the first name and last name, lowercase it
+            first_initial="${firstname,,:0:1}"
+            last_initial="${lastname,,:0:1}"
 
-            # Combine them with the date of birth
+            # Combine them with the date of birth for the password
             password="${first_initial}${last_initial}$yy$mm$dd"
             
             # Change password to the correct format
