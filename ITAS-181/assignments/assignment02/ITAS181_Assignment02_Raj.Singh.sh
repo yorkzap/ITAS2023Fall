@@ -78,7 +78,7 @@ do
             # Change password to the correct format
             echo "Updating password for $username..."
             echo "$username:$password" | sudo chpasswd
-            echo "User created: $username with password: $password"
+            echo "User created: $username
         else
             echo "Failed to create user: $username"
         fi
