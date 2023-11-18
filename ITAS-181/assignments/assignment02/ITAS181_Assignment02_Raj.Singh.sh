@@ -67,8 +67,10 @@ do
             dd=$(printf "%02d" $dd)
 
             # Extract the first letter of the first name and last name, lowercase it
-            first_initial="${firstname,,:0:1}"
-            last_initial="${lastname,,:0:1}"
+            first_initial="${firstname:0:1}"
+            last_initial="${lastname:0:1}"
+            first_initial="${first_initial,,}"
+            last_initial="${last_initial,,}"
 
             # Combine them with the date of birth for the password
             password="${first_initial}${last_initial}$yy$mm$dd"
