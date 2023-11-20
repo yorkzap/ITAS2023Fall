@@ -1,206 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog - Assignment 1 - Portfolio UI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Google font Heeboo -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Use Heebo font -->
-    <style>
-      html,
-      body {
-        font-family: "Heebo", sans-serif;
-      }
-    </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#21243D",
-              secondary: "#8695A4",
-            },
-            fontSize: {
-              mobile: "26px",
-            },
-          },
-        },
-      };
-    </script>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const toggleButton = document.getElementById("toggleButton");
-        const nav = document.getElementById("nav");
-
-        const menuBar = document.querySelector(".icon-open");
-        const menuClose = document.querySelector(".icon-close");
-
-        toggleButton.addEventListener("click", function (element) {
-          toggleButton.classList.toggle("z-10");
-          nav.classList.toggle("-translate-x-full");
-          document.body.classList.toggle("overflow-hidden");
-          menuBar.classList.toggle("hidden");
-          menuClose.classList.toggle("hidden");
-        });
-      });
-    </script>
-  </head>
-  <body>
-    <header class="flex flex-col items-center">
-      <button
-        id="toggleButton"
-        aria-label="Toggle Navigation"
-        class="self-end mt-4 mr-4 sm:hidden z-1o"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon-open w-6 h-6"
-        >
-          <line x1="4" x2="20" y1="12" y2="12" />
-          <line x1="4" x2="20" y1="6" y2="6" />
-          <line x1="4" x2="20" y1="18" y2="18" />
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon-close w-6 h-6 hidden"
-        >
-          <path d="M18 6 6 18" />
-          <path d="m6 6 12 12" />
-        </svg>
-        <span class="sr-only">menu button</span>
-      </button>
-      <nav
-        id="nav"
-        class="transition duration-100 transform -translate-x-full sm:translate-x-0 bg-green-400 flex flex-col gap-y-16 justify-center sm:flex-row self-end gap-x-8 p-8 sm:mr-8 font-medium fixed sm:static sm:bg-transparent inset-0 text-4xl sm:text-lg text-center"
-      >
-        <a href="/" class="hover:cursor-pointer hover:underline">Home</a>
-        <a
-          href="blog.html"
-          class="text-blue-500 hover:cursor-pointer hover:underline"
-          >Blog</a
-        >
-        <a href="works.html" class="hover:cursor-pointer hover:underline"
-          >Works</a
-        >
-      </nav>
-    </header>
-    <main>
-      <div class="max-w-7xl mx-auto p-16">
-        <h1 class="text-4xl font-medium mb-8">Blog</h1>
-        <div class="space-y-8">
-          <!-- Section 1 -->
-          <section class="text-primary space-y-2">
-            <h2
-              class="text-mobile sm:text-3xl font-medium leading-9 sm:leading-[44px]"
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Blog - Assignment 1 - Portfolio UI</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- Google font Heeboo -->
+      <link
+         href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+         rel="stylesheet"
+         >
+      <!-- Use Heebo font -->
+      <style>
+         html,
+         body {
+         font-family: "Heebo", sans-serif;
+         }
+      </style>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+         tailwind.config = {
+           theme: {
+             extend: {
+               colors: {
+                 primary: "#21243D",
+                 secondary: "#8695A4",
+               },
+               fontSize: {
+                 mobile: "26px",
+               },
+             },
+           },
+         };
+      </script>
+      <link
+         rel="stylesheet"
+         href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+         crossorigin="anonymous"
+         >
+      <script>
+         document.addEventListener("DOMContentLoaded", () => {
+           const toggleButton = document.getElementById("toggleButton");
+           const nav = document.getElementById("nav");
+         
+           const menuBar = document.querySelector(".icon-open");
+           const menuClose = document.querySelector(".icon-close");
+         
+           toggleButton.addEventListener("click", function (element) {
+             toggleButton.classList.toggle("z-10");
+             nav.classList.toggle("-translate-x-full");
+             document.body.classList.toggle("overflow-hidden");
+             menuBar.classList.toggle("hidden");
+             menuClose.classList.toggle("hidden");
+           });
+         });
+      </script>
+   </head>
+   <body>
+      <header class="flex flex-col items-center">
+         <button
+            id="toggleButton"
+            aria-label="Toggle Navigation"
+            class="self-end mt-4 mr-4 sm:hidden z-1o"
             >
-              UI Interactions of the week
-            </h2>
-            <div class="text-xl">
-              <span>12 Feb 2019</span>
-              <span class="mx-4">|</span>
-              <span class="text-secondary">Express, Handlebars</span>
-            </div>
-            <p>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
-            </p>
-          </section>
-          <hr />
-          <!-- Section 2 -->
-          <section class="text-primary space-y-2">
-            <h2
-              class="text-mobile sm:text-3xl font-medium leading-9 sm:leading-[44px]"
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               width="24"
+               height="24"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               class="icon-open w-6 h-6"
+               >
+               <line x1="4" x2="20" y1="12" y2="12"></line>
+               <line x1="4" x2="20" y1="6" y2="6"></line>
+               <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               width="24"
+               height="24"
+               viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               class="icon-close w-6 h-6 hidden"
+               >
+               <path d="M18 6 6 18"></path>
+               <path d="m6 6 12 12"></path>
+            </svg>
+            <span class="sr-only">menu button</span>
+         </button>
+         <nav
+            id="nav"
+            class="transition duration-100 transform -translate-x-full sm:translate-x-0 bg-green-400 flex flex-col gap-y-16 justify-center sm:flex-row self-end gap-x-8 p-8 sm:mr-8 font-medium fixed sm:static sm:bg-transparent inset-0 text-4xl sm:text-lg text-center"
             >
-              UI Interactions of the week
-            </h2>
-            <div class="text-xl">
-              <span>12 Feb 2019</span>
-              <span class="mx-4">|</span>
-              <span class="text-secondary">Express, Handlebars</span>
+            <a href="/" class="hover:cursor-pointer hover:underline">Home</a>
+            <a
+               href="blog.html"
+               class="text-red-500 hover:cursor-pointer hover:underline"
+               >Blog</a
+               >
+            <a href="works.html" class="hover:cursor-pointer hover:underline"
+               >Works</a
+               >
+         </nav>
+      </header>
+      <main>
+         <div class="max-w-7xl mx-auto p-16">
+            <h1 class="text-4xl font-medium mb-8">Blog</h1>
+            <div class="space-y-8">
+               <!-- Section 1 -->
+               <section class="text-primary space-y-2">
+                  <h2
+                     class="text-mobile sm:text-3xl font-medium leading-9 sm:leading-[44px]"
+                     >
+                     UI Interactions of the week
+                  </h2>
+                  <div class="text-xl">
+                     <span>12 Feb 2019</span>
+                     <span class="mx-4">|</span>
+                     <span class="text-secondary">Express, Handlebars</span>
+                  </div>
+                  <p>
+                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                     amet sint. Velit officia consequat duis enim velit mollit.
+                     Exercitation veniam consequat sunt nostrud amet.
+                  </p>
+               </section>
+               <hr>
+               <!-- Section 2 -->
+               <section class="text-primary space-y-2">
+                  <h2
+                     class="text-mobile sm:text-3xl font-medium leading-9 sm:leading-[44px]"
+                     >
+                     UI Interactions of the week
+                  </h2>
+                  <div class="text-xl">
+                     <span>12 Feb 2019</span>
+                     <span class="mx-4">|</span>
+                     <span class="text-secondary">Express, Handlebars</span>
+                  </div>
+                  <p>
+                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                     amet sint. Velit officia consequat duis enim velit mollit.
+                     Exercitation veniam consequat sunt nostrud amet.
+                  </p>
+               </section>
+               <hr>
+               <!-- Section 3 -->
+               <section class="text-primary space-y-2">
+                  <h2
+                     class="text-mobile sm:text-3xl font-medium leading-9 sm:leading-[44px]"
+                     >
+                     UI Interactions of the week
+                  </h2>
+                  <div class="text-xl">
+                     <span>12 Feb 2019</span>
+                     <span class="mx-4">|</span>
+                     <span class="text-secondary">Express, Handlebars</span>
+                  </div>
+                  <p>
+                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                     amet sint. Velit officia consequat duis enim velit mollit.
+                     Exercitation veniam consequat sunt nostrud amet.
+                  </p>
+               </section>
+               <hr>
+               <!-- Section 4 -->
+               <section class="text-primary space-y-2">
+                  <h2
+                     class="text-mobile sm:text-3xl font-medium leading-9 sm:leading-[44px]"
+                     >
+                     UI Interactions of the week
+                  </h2>
+                  <div class="text-xl">
+                     <span>12 Feb 2019</span>
+                     <span class="mx-4">|</span>
+                     <span class="text-secondary">Express, Handlebars</span>
+                  </div>
+                  <p>
+                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                     amet sint. Velit officia consequat duis enim velit mollit.
+                     Exercitation veniam consequat sunt nostrud amet.
+                  </p>
+               </section>
+               <hr>
             </div>
-            <p>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
-            </p>
-          </section>
-          <hr />
-          <!-- Section 3 -->
-          <section class="text-primary space-y-2">
-            <h2
-              class="text-mobile sm:text-3xl font-medium leading-9 sm:leading-[44px]"
-            >
-              UI Interactions of the week
-            </h2>
-            <div class="text-xl">
-              <span>12 Feb 2019</span>
-              <span class="mx-4">|</span>
-              <span class="text-secondary">Express, Handlebars</span>
-            </div>
-            <p>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
-            </p>
-          </section>
-          <hr />
-          <!-- Section 4 -->
-          <section class="text-primary space-y-2">
-            <h2
-              class="text-mobile sm:text-3xl font-medium leading-9 sm:leading-[44px]"
-            >
-              UI Interactions of the week
-            </h2>
-            <div class="text-xl">
-              <span>12 Feb 2019</span>
-              <span class="mx-4">|</span>
-              <span class="text-secondary">Express, Handlebars</span>
-            </div>
-            <p>
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-              amet sint. Velit officia consequat duis enim velit mollit.
-              Exercitation veniam consequat sunt nostrud amet.
-            </p>
-          </section>
-          <hr />
-        </div>
-      </div>
-    </main>
-    <footer class="text-center">
-      <i class="fab fa-facebook-square"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin"></i>
-    </footer>
-  </body>
+         </div>
+      </main>
+      <footer class="pt-24 text-center">
+         <div class="flex gap-x-6 justify-center">
+            <i class="hover:cursor-pointer text-5xl fab fa-facebook-square"></i>
+            <i class="hover:cursor-pointer text-5xl fab fa-instagram"></i>
+            <i class="hover:cursor-pointer text-5xl fab fa-twitter"></i>
+            <i class="hover:cursor-pointer text-5xl fab fa-linkedin"></i>
+         </div>
+         <p class="mt-[1.62rem] mb-[3.37rem] text-[0.875rem]">Copyright ©2023 All rights reserved </p>
+      </footer>
+   </body>
 </html>

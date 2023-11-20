@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Assignment 1 - Portfolio UI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -10,7 +10,25 @@
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
-    />
+    >
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primaryDark: "#21243D",
+              secondaryLight: "#8695A4",
+              backgroundLightBlue: "#EDF7FA",
+              linkBlue: "#00A8CC",
+              accentDarkBlue: "#142850",
+            },
+            fontSize: {
+              mobile: "24px",
+            },
+          },
+        },
+      };
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const toggleButton = document.getElementById("toggleButton");
@@ -28,8 +46,8 @@
         });
       });
     </script>
-  </head>
-  <body>
+</head>
+<body>
     <header class="flex flex-col items-center">
       <button
         id="toggleButton"
@@ -71,23 +89,17 @@
       </button>
       <nav
         id="nav"
-        class="transition duration-100 transform -translate-x-full sm:translate-x-0 bg-green-400 flex flex-col gap-y-16 justify-center sm:flex-row self-end gap-x-8 p-8 sm:mr-8 font-medium fixed sm:static sm:bg-transparent inset-0 text-4xl sm:text-lg text-center"
+        class="transition duration-100 transform -translate-x-full sm:translate-x-0 bg-green-400 flex flex-col gap-y-16 justify-center sm:flex-row self-end gap-x-8 p-8 sm:mr-8 font-medium fixed sm:static sm:bg-transparent inset-0 text-5xl sm:text-lg text-center"
       >
-        <a href="/" class="text-blue-500 hover:cursor-pointer hover:underline"
-          >Home</a
-        >
-        <a href="blog.html" class="hover:cursor-pointer hover:underline"
-          >Blog</a
-        >
-        <a href="works.html" class="hover:cursor-pointer hover:underline"
-          >Works</a
-        >
+        <a href="/" class="text-red-500 hover:cursor-pointer hover:underline">Home</a>
+        <a href="blog.html" class="hover:cursor-pointer hover:underline">Blog</a>
+        <a href="works.html" class="hover:cursor-pointer hover:underline">Works</a>
       </nav>
       <div
         class="flex flex-col gap-y-8 sm:flex-row p-16 max-w-7xl mt-4 sm:mt-20"
       >
         <section class="sm:flex-1 order-2 text-center sm:text-left">
-          <h2 class="text-4xl sm:text-5xl font-semibold">
+          <h2 class="text-5xl sm:text-5xl font-semibold">
             Hi, I am John, Creative Technologist
           </h2>
           <p class="my-8">
@@ -101,31 +113,97 @@
             Download Resume
           </button>
         </section>
-        <section class="sm:flex-1 text-center order-1 sm:order-3">
-          <img class="inline-block" src="img/avatar.png" alt="avatar" />
-        </section>
+        <div class="sm:flex-1 text-center order-1 sm:order-3">
+          <img class="inline-block" src="img/avatar.png" alt="av">
+        </div>
       </div>
     </header>
     <main>
-      <div class="max-w-7xl p-16 mx-auto">
-        <p>
-          Finish the rest conent of <strong>Home</strong>
-          <a
-            target="_blank"
-            class="text-blue-500 underline"
-            href="https://www.figma.com/file/pI26ZWOO0k9QU3RtIoydTN/Portfolio-UI---Web-%26-Mobile-(Community)?type=design&node-id=0-1&mode=design&t=hVYW9WgUbU29i5HH-0"
-            >Mockup</a
-          >
-          <br />
-          You alos need to re-design the footer!
-        </p>
+      <section class="bg-backgroundLightBlue px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex sm:justify-between justify-center py-5 px-16">
+            <h3 class="text-[22px]">Recent Posts</h3>
+            <a class="text-linkBlue sm:visible collapse">View all</a>
+          </div>
+          <div class="sm:px-16 px-3 pb-8 flex md:flex-row flex-col justify-between gap-x-5 gap-y-6">
+            <div class="block p-8 bg-white rounded flex flex-col gap-y-5 basis-1/2">
+              <h3 class="text-3xl font-bold">Making a design system from scratch</h3>
+              <div class="text-lg">
+                <span>12 Feb 2019</span>
+                <span class="mx-4">|</span>
+                <span>Design, Pattern</span>
+              </div>
+              <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+            </div>
+            <div class="block p-8 bg-white rounded flex flex-col gap-y-5 basis-1/2">
+              <h3 class="text-3xl font-bold">Creating pixel perfect icons in Figma</h3>
+              <div class="text-lg">
+                <span>12 Feb 2020</span>
+                <span class="mx-4">|</span>
+                <span>Figma, Icon Design</span>
+              </div>
+              <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="max-w-7xl px-16 mx-auto bg-white">
+        <div class="flex justify-center sm:justify-start items-baseline">
+          <h4 class="text-lg sm:text-[1.375em] leading-[3.75em]">Featured Works</h4>
+        </div>
+        <div class="sm:flex">
+          <img class="self-start sm:mr-4 mb-3 sm:w-[15.375rem] w-full" src="img/feature-1.png" alt="feature-1">
+          <div>
+            <div>
+              <h3 class="font-medium sm:text-[1.875rem] text-2xl">Designing Dashboards</h3>
+            </div>
+            <div class="sm:mb-5 mb-6 mt-4 items-baseline">
+              <span class="mr-7 py-px px-3 rounded-full bg-accentDarkBlue text-white font-bold sm:text-xl text-base">2020</span>
+              <span class="sm:text-xl text-base">Dashboard</span>
+            </div>
+            <p class="mb-4">Amet minim mollit non deserunt ullamco est sit aliua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+          </div>  
+        </div>
+        <hr class="mb-8">
+        <div class="sm:flex">
+          <img class="self-start sm:mr-4 mb-3 sm:w-[15.375rem] w-full" src="img/feature-2.png" alt="feature-2">
+          <div>
+            <div>
+              <h3 class="font-medium sm:text-[1.875rem] text-2xl">Vibrant Portraits of 2020</h3>
+            </div>
+            <div class="sm:mb-5 mb-6 mt-4 items-baseline">
+              <span class="mr-7 py-px px-3 rounded-full bg-accentDarkBlue text-white font-bold sm:text-xl text-base">2018</span>
+              <span class="sm:text-xl text-base">Illustration</span>
+            </div>
+            <p class="mb-4">Amet minim mollit non deserunt ullamco est sit aliua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+          </div>  
+        </div>
+        <hr class="mb-8">
+        <div class="sm:flex">
+          <img class="self-start sm:mr-4 mb-3 sm:w-[15.375rem] w-full" src="img/feature-3.png" alt="feature-3">
+          <div>
+            <div>
+              <h3 class="font-medium sm:text-[1.875rem] text-2xl">36 Days of Malayalam type</h3>
+            </div>
+            <div class="sm:mb-5 mb-6 mt-4 items-baseline">
+              <span class="mr-7 py-px px-3 rounded-full bg-accentDarkBlue text-white font-bold sm:text-xl text-base">2018</span>
+              <span class="sm:text-xl text-base">Typography</span>
+            </div>
+            <p class="mb-4">Amet minim mollit non deserunt ullamco est sit aliua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+          </div>  
+        </div>
+        <hr class="mb-8">
       </div>
     </main>
-    <footer class="text-center">
-      <i class="fab fa-facebook-square"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin"></i>
+    
+    <footer class="pt-24 text-center">
+      <div class="flex gap-x-6 justify-center">
+        <i class="hover:cursor-pointer text-5xl fab fa-facebook-square"></i>
+        <i class="hover:cursor-pointer text-5xl fab fa-instagram"></i>
+        <i class="hover:cursor-pointer text-5xl fab fa-twitter"></i>
+        <i class="hover:cursor-pointer text-5xl fab fa-linkedin"></i>
+      </div>
+      <p class="mt-[1.62rem] mb-[3.37rem] text-[0.875rem]">Copyright ©2023 All rights reserved </p>
     </footer>
-  </body>
+</body>
 </html>
