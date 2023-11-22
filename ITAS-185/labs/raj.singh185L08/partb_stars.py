@@ -4,7 +4,7 @@ Lab08: Star generator using Turtle module
 
 Description:
     This Python script uses the 'turtle' module to generate a star shape on the canvas.
-    The user is prompted to enter the number of points on the star, which should be an odd number between 5 and 101 (default is 5).
+    The user is prompted to enter an odd number between 5 and 101 (default is 5) for points on the star.
     The script draws a star with the specified number of points on the canvas.
     The star is filled with a yellow color, and its outline is in black.
     The window closes when clicked.
