@@ -9,5 +9,11 @@ Description:
     yellow for correct letters in the wrong position, and uncolored for incorrect 
     letters. The game continues until the player either guesses the word correctly 
     or runs out of attempts, at which point the game can be restarted.
-"""
 
+Requirements:
+    This code requires the `colorama` module to be installed in the Python 
+    environment. Additionally, a file named 'wordlewords.txt' must exist in the 
+    same directory as this script, containing potential secret words (one per 
+    line, all uppercase). Adjustments may be necessary based on your specific 
+    environment or requirements.
+"""
