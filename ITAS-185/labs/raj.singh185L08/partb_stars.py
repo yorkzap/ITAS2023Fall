@@ -1,7 +1,6 @@
 """
 Course: ITAS 185 - Introduction to Programming
 Lab08: Star generator using Turtle module
-
 Description:
     This Python script uses the 'turtle' module to generate a star shape on the canvas.
     The user is prompted to enter an odd number between 5 and 101 (default is 5) for points on the star.
