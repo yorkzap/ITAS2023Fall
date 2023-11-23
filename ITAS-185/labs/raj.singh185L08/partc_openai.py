@@ -9,9 +9,8 @@ Description:
 
 import openai
 
-
 class StoryAuthor:
-    """A class to generate stories based on user inputs and the OpenAI GPT model."""
+    """Generate stories based on user inputs using the openai GPT model."""
 
     def __init__(self):
         """Initializes the StoryAuthor class without any attributes."""
