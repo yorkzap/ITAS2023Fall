@@ -1,6 +1,6 @@
 """
 Course: ITAS 185 - Introduction to Programming
-Lab08: Star generator using Turtle module
+Lab08: OpenAI Children's Story Author
 Description:
     This script defines a StoryAuthor class capable of generating stories. It takes user input
     for an animal, a body part, and a landscape/timeframe setting. Utilizing the OpenAI GPT model,
