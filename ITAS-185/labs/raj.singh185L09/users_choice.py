@@ -1,3 +1,12 @@
+"""
+    Course: ITAS 185 - Introduction to Programming
+    Lab 9: Exceptions - Part B
+    Name: Raj Singh
+    Description: This program asks the user for a letter and a file name. It then counts the number of times the letter
+    appears in the file. The program will run in a loop until the user exits with Ctrl+C. It handles user input,
+    validates input, and responds to Ctrl+Z by preventing suspension of the program.
+"""
+
 import os
 from termcolor import colored
 
@@ -44,13 +53,15 @@ def list_text_files(path):
     return file_list
 
 def check_text_files(path):
+    print("")
     print(colored(f"Checking for all text files in {path}...", 'blue'))
     file_list = list_text_files(path)
     if not file_list:
         print(colored("No text files found.", 'yellow'))
     else:
         for file in file_list:
-            print(colored(f" - {file} found", 'green'))
+            print(colored(f"\t - {file}", 'green'))
+        print()
     return file_list
 
 def get_user_file(file_list):
@@ -61,7 +72,8 @@ def get_user_file(file_list):
                 raise FourOFour
             break
         except FourOFour:
-            print(colored(f"File '{file}' not found in {files_path}. Please enter a valid file name.", 'red'))
+            print(colored(f"File '{file}' not found in {files_path}. Please enter a valid file name from the following:", 'red'))
+            check_text_files(files_path)
     return file
 
 def count_letter_frequency(letter, file_path):
@@ -80,15 +92,17 @@ def display_result(letter, file, frequency):
         print(colored(f"Error reading file: {file}", 'red'))
 
 if __name__ == "__main__":
-    while True:
-        welcome_message()
-        letter = get_user_letter()
-        files_path = "./files/part_b"
-        file_list = check_text_files(files_path)
-        selected_file = get_user_file(file_list)
-        frequency = count_letter_frequency(letter, os.path.join(files_path, selected_file))
-        display_result(letter, selected_file, frequency)
-
-        another = input("Do you want to check another letter and file? (yes/no): ")
-        if another.lower() != 'yes':
-            break
+    try:
+        while True:
+            welcome_message()
+            letter = get_user_letter()
+            files_path = "./files/part_b"
+            file_list = check_text_files(files_path)
+            selected_file = get_user_file(file_list)
+            frequency = count_letter_frequency(letter, os.path.join(files_path, selected_file))
+            display_result(letter, selected_file, frequency)
+            another = input("Do you want to check another letter and file? (yes/no): ")
+            if another.lower() != 'yes':
+                break
+    except KeyboardInterrupt:
+        print("\n\tProgram exited by user (Ctrl+C).")
