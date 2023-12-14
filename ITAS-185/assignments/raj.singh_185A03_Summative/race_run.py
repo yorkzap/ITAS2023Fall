@@ -4,72 +4,67 @@
     Description: XXXXXXXXX
 """
 
-import os
-from classes.Vehicle import Vehicle
+# Ensure the classes directory is correctly referenced for the imports
 from classes.Motorcycle import Motorcycle
 from classes.Truck import Truck
 from classes.Tesla import Tesla
 from classes.RaceTrack import RaceTrack
-import random
+import os
+import time
 
-# Helper function to parse a line from the vehicle data files
-def parse_vehicle_data(line):
-    parts = line.split(',')
-    if parts[0] == "Motorcycle":
+def clear_screen():
+    # Clear the console screen.
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def create_vehicle_from_line(line):
+    parts = line.strip().split(',')
+    if parts[0] == 'Motorcycle':
         return Motorcycle(parts[1], parts[2])
-    elif parts[0] == "Truck":
+    elif parts[0] == 'Truck':
         return Truck(parts[1], parts[2], parts[3].strip() == 'True')
-    elif parts[0] == "Tesla":
+    elif parts[0] == 'Tesla':
         return Tesla(parts[1], parts[2], parts[3].strip() == 'True')
     else:
-        raise ValueError("Unknown vehicle type")
+        raise ValueError(f"Unknown vehicle type: {parts[0]}")
 
-# Main function to run the race simulation
-def run_race():
-    # Prompt for the vehicle data file
-    while True:
-        filename = input("Enter the filename of the vehicle data or 'exit' to quit: ")
-        if filename.lower() == 'exit':
-            return
-        if os.path.exists(f"data/{filename}"):
-            break
-        else:
-            print("File not found, please try again.")
-
-    # Read vehicle data and create vehicle objects
+def main():
+    race_track = RaceTrack()
     race_vehicles = []
-    with open(f"data/{filename}", 'r') as file:
+
+    filename = input("Enter the filename of the vehicle data or 'exit' to quit: ")
+    if filename.lower() == 'exit':
+        return
+    filepath = os.path.join('data', filename)
+    if not os.path.isfile(filepath):
+        print("File not found. Please try again.")
+        return
+
+    with open(filepath, 'r') as file:
         for line in file:
-            if line.strip():  # Skip empty lines
-                vehicle = parse_vehicle_data(line)
+            if line.strip():  # Ignore empty lines
+                vehicle = create_vehicle_from_line(line)
                 race_vehicles.append(vehicle)
 
-    # Create the racetrack
-    race_track = RaceTrack()
+    current_round = 1
+    race_over = False
+    while not race_over:
+        clear_screen()  # Clear the screen before printing the new race state
+        print(race_track.__str__(current_round, race_vehicles))  # Print the updated race track
 
-    # Run the race simulation
-    round = 1
-    while True:
-        # Display the race track
-        print(race_track.__str__(race_vehicles))
-
-        # Check if any vehicle has won
-        for vehicle in race_vehicles:
-            if vehicle.get_position() >= race_track.get_length():
-                race_track.champion(vehicle)
-                return
-
-        # Update the positions of the vehicles
         for vehicle in race_vehicles:
             vehicle.accelerate()
             vehicle.move()
-            # Add randomness to acceleration if needed
-            variance = random.choices([-0.2, -0.1, 0, 0.1, 0.2], weights=[1, 2, 6, 2, 1], k=1)[0]
-            vehicle.set_speed(vehicle.get_speed() + variance)
+            if vehicle.get_position_int() >= race_track.get_length():
+                race_track.champion(vehicle)
+                race_over = True
+                break
 
-        # Increment the round counter
-        round += 1
+        current_round += 1
+        time.sleep(0.5)  # Pause for a short time interval to watch the race progress
 
-# Run the main race simulation
+        if race_over:
+            print("Race over!")
+            break
+
 if __name__ == "__main__":
-    run_race()
+    main()

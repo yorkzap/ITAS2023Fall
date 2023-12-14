@@ -1,46 +1,36 @@
 """
     Course: ITAS 185 - Introduction to Programming
     Assigment 03: RaceTrack.py class
-    Description: XXXXXXXXX
+    Description: Visualize racetrack competitions with textual representation and champion detection.
 """
 
 class RaceTrack:
-    def __init__(self, name: str = "ITAS Motor Speedway", length: int = 20):
-        self._name = name
-        self._length = length
+    def __init__(self, name="ITAS Motor Speedway", length=20):
+        self.__name = name
+        self.__length = length
 
-    def get_name(self) -> str:
-        """Return the name of the race track."""
-        return self._name
+    def get_name(self):
+        return self.__name
 
-    def get_length(self) -> int:
-        """Return the length of the race track."""
-        return self._length
+    def get_length(self):
+        return self.__length
 
-    def __str__(self, vehicles) -> str:
-        """Return a string representation of the race track with vehicle positions."""
-        # Header for the racetrack display
-        track_representation = f"Round of the race at {self._name}:\n"
+    def __str__(self, current_round, race_vehicles):
+        ground_lanes = f"{self.get_name()}\nRace round[{current_round}]\n\n"
 
-        # Initialize the track display for each position
-        track_lines = ['|' for _ in range(self._length)]
+        # Generate header with lane numbers
+        lane_numbers = " | ".join(map(str, range(1, len(race_vehicles) + 1)))
+        ground_lanes += f"| {lane_numbers} |\n"
 
-        # Iterate over each vehicle to place it on the track
-        for vehicle in vehicles:
-            position = vehicle.get_position_int()
-            # Ensure that the position does not exceed the track length
-            position = min(position, self._length - 1)
-            # Place the vehicle icon at its position
-            track_lines[position] += vehicle.get_icon()
+        # Generate race track grid
+        for row in range(1, self.get_length() + 2):  # Start at 1, go one past the length
+            ground_lanes += "|"
+            for vehicle in race_vehicles:
+                icon = vehicle.get_icon() if vehicle.get_position_int() == row - 1 else " "
+                ground_lanes += f" {icon} |"
+            ground_lanes += f" Position: [{row - 1}]\n"  # row - 1 to match vehicle positions
 
-        # Fill the rest of the track with spaces and end with a lane marker
-        for i in range(self._length):
-            track_lines[i] += ' ' * (len(vehicles) - len(track_lines[i])) + '|'
+        return ground_lanes
 
-        # Combine all track lines into a single string
-        track_representation += '\n'.join(track_lines) + '\n'
-        return track_representation
-
-    def champion(self, winner) -> None:
-        """Display the winner of the race."""
-        print(f"Congratulations to the champion: {winner}")
+    def champion(self, winner):
+        print(f"Congratulations to the champion!\n{winner}")
